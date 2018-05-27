@@ -8,6 +8,8 @@
   (GET "/" [] "hello! Yes, this is proxy.")
   (route/not-found "Not Found"))
 
+;; prolly going to demo kv-store write/watch with redis.
+
 (def app
   (-> app-routes
       (wrap-proxy "/proxied-counter" "http://localhost:3000/")))
